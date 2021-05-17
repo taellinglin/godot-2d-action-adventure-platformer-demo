@@ -7,4 +7,3 @@
 [node name="RichTextLabel" parent="PanelContainer" index="0"]
 bbcode_text = "Go to Next Level ?"
 text = "Go to Next Level ?"
-

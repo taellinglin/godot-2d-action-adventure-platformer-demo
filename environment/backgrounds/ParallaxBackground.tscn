@@ -5,8 +5,6 @@
 [ext_resource path="res://environment/backgrounds/sprites/BGBack.png" type="Texture" id=3]
 [ext_resource path="res://environment/backgrounds/sprites/BGFront.png" type="Texture" id=4]
 
-
-
 [node name="Background" type="ParallaxBackground"]
 
 [node name="CloudsBack" type="ParallaxLayer" parent="."]
@@ -46,4 +44,3 @@ position = Vector2( 3.68317, -3.68317 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 2048, 320 )
-

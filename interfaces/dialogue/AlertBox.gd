@@ -1,5 +1,5 @@
 extends Node2D
-class_name AlertBox
+class_name GameOverDialog
 
 signal interaction(type)
 

@@ -4,7 +4,7 @@
 [ext_resource path="res://interfaces/menu/GameOver.tscn" type="PackedScene" id=2]
 [ext_resource path="res://interfaces/menu/Pause.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tools/draw-bounds.gd" type="Script" id=4]
-[ext_resource path="res://sound/music/Star Commander1.wav" type="AudioStream" id=5]
+[ext_resource path="res://sound/music/Forest3.ogg" type="AudioStream" id=5]
 [ext_resource path="res://environment/backgrounds/ParallaxBackground.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/tilemaps/TilemapBackground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://environment/tilemaps/TilemapBridge.tscn" type="PackedScene" id=8]

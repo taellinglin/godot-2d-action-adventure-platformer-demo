@@ -4,7 +4,7 @@
 [ext_resource path="res://interfaces/menu/GameOver.tscn" type="PackedScene" id=2]
 [ext_resource path="res://interfaces/menu/Pause.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tools/draw-bounds.gd" type="Script" id=4]
-[ext_resource path="res://sound/music/Star Commander1.wav" type="AudioStream" id=5]
+[ext_resource path="res://sound/music/Travels of Oorta - Autumn Puzzle.ogg" type="AudioStream" id=5]
 [ext_resource path="res://environment/backgrounds/ParallaxBackground.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/tilemaps/TilemapBackground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://environment/tilemaps/TilemapBridge.tscn" type="PackedScene" id=8]
@@ -32,7 +32,6 @@ visible = false
 visible = false
 
 [node name="Bounds" type="Node2D" parent="."]
-editor/display_folded = true
 scale = Vector2( 1, 12.36 )
 script = ExtResource( 4 )
 color = Color( 0.756863, 0.376471, 0.85098, 1 )
@@ -45,17 +44,14 @@ position = Vector2( -930.411, -27.7881 )
 position = Vector2( -476.242, -49.2994 )
 
 [node name="Ambiance" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Music" type="AudioStreamPlayer" parent="Ambiance"]
 stream = ExtResource( 5 )
 autoplay = true
 
 [node name="World" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Environment" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Background" parent="World/Environment" instance=ExtResource( 6 )]
 
@@ -72,13 +68,11 @@ tile_data = PoolIntArray( -1638449, 1, 0, -1638448, 1, 0, -1638446, 1, 0, -16384
 [node name="TilemapHerb" parent="World/Environment" instance=ExtResource( 11 )]
 
 [node name="Props" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="House" parent="World/Props" instance=ExtResource( 12 )]
 position = Vector2( -544.242, -453.341 )
 
 [node name="Enemies" type="Node2D" parent="World"]
-editor/display_folded = true
 
 [node name="Dummy" parent="World/Enemies" instance=ExtResource( 13 )]
 visible = false
@@ -104,7 +98,5 @@ limit_right = 1750
 limit_bottom = 270
 
 [node name="HUD" type="CanvasLayer" parent="World/Player"]
-editor/display_folded = true
 
 [node name="PlayerLifeBar" parent="World/Player/HUD" instance=ExtResource( 17 )]
-

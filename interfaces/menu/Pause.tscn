@@ -44,9 +44,9 @@ custom_constants/separation = 16
 alignment = 1
 
 [node name="Label" type="Label" parent="Background/VBoxContainer"]
-margin_top = 21.0
+margin_top = 23.0
 margin_right = 139.0
-margin_bottom = 50.0
+margin_bottom = 39.0
 size_flags_vertical = 6
 custom_fonts/font = ExtResource( 2 )
 text = "Pause"
@@ -54,9 +54,9 @@ align = 1
 valign = 1
 
 [node name="Resume" type="Button" parent="Background/VBoxContainer"]
-margin_top = 87.0
+margin_top = 79.0
 margin_right = 139.0
-margin_bottom = 95.0
+margin_bottom = 91.0
 focus_next = NodePath("../QuitBtn")
 focus_previous = NodePath("../ResumeBtn")
 custom_styles/hover = ExtResource( 3 )
@@ -67,7 +67,7 @@ custom_fonts/font = ExtResource( 7 )
 text = "Resume"
 
 [node name="Quit" type="Button" parent="Background/VBoxContainer"]
-margin_top = 111.0
+margin_top = 107.0
 margin_right = 139.0
 margin_bottom = 119.0
 focus_next = NodePath("../ResumeBtn")
@@ -78,4 +78,3 @@ custom_styles/focus = ExtResource( 5 )
 custom_styles/normal = ExtResource( 6 )
 custom_fonts/font = ExtResource( 8 )
 text = "Quit"
-

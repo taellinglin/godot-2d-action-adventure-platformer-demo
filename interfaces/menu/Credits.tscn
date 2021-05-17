@@ -1,20 +1,28 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://interfaces/menu/Credits.gd" type="Script" id=1]
 [ext_resource path="res://environment/backgrounds/ParallaxBackground.tscn" type="PackedScene" id=2]
-[ext_resource path="res://interfaces/theme/panel/alertbox.styleboxflat.tres" type="StyleBox" id=3]
-[ext_resource path="res://interfaces/theme/fonts/alertbox.bold.tres" type="DynamicFont" id=4]
-[ext_resource path="res://interfaces/theme/fonts/alertbox.normal.tres" type="DynamicFont" id=5]
-[ext_resource path="res://interfaces/theme/fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://font/Daemon Full Working (1).ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://interfaces/theme/button/pressed.stylebox.tres" type="StyleBox" id=7]
 [ext_resource path="res://interfaces/theme/button/focus.stylebox.tres" type="StyleBox" id=8]
 [ext_resource path="res://interfaces/theme/button/normal.stylebox.tres" type="StyleBox" id=9]
 [ext_resource path="res://interfaces/theme/fonts/menu.dynamicfont.tres" type="DynamicFont" id=10]
 
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 6 )
+[sub_resource type="StyleBoxEmpty" id=1]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="DynamicFont" id=2]
+size = 19
+outline_size = 1
+outline_color = Color( 0, 0.831373, 1, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+outline_size = 1
+outline_color = Color( 0.780392, 0.686275, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_color = Color( 1, 1, 1, 1 )
 corner_radius_top_left = 2
@@ -31,9 +39,14 @@ anti_aliasing = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
-editor/display_folded = true
+
+[node name="Sprite" parent="Background/CloudsBack" index="0"]
+position = Vector2( -35, -31 )
 
 [node name="CloudFront" parent="Background" index="1"]
 visible = false
@@ -42,85 +55,60 @@ position = Vector2( 820, 203 )
 [node name="BGBack" parent="Background" index="2"]
 position = Vector2( 769.796, 150 )
 
+[node name="Sprite" parent="Background/BGBack" index="0"]
+position = Vector2( 5.62885, -166.882 )
+
+[node name="Sprite" parent="Background/BGFront" index="0"]
+position = Vector2( 0.68317, -111.683 )
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -160.0
-margin_top = -115.67
-margin_right = 160.0
-margin_bottom = 84.33
-custom_styles/panel = ExtResource( 3 )
+margin_left = -117.0
+margin_top = -59.67
+margin_right = 203.0
+margin_bottom = 140.33
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 319.0
-margin_bottom = 199.0
-custom_fonts/bold_font = ExtResource( 4 )
-custom_fonts/normal_font = ExtResource( 5 )
-custom_colors/default_color = Color( 0.207843, 0.101961, 0.101961, 1 )
+margin_right = 320.0
+margin_bottom = 200.0
+custom_fonts/bold_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "This demo was made by using those amazing assets (thanks to their author, that share their works like that). To use those assets, I recommend to directly download it from their official page and follow the license terms. See my github for the links.
+bbcode_text = "[b][color=#006666]Contributors:[/color][/b]
+[color=#ffe000]
+taellinglin(兩零林) [Musician]
+Geist [Programmer]
+Yummyglitzer [Animator]
+Ninja_cat [Artist]
+[/color]"
+text = "Contributors:
 
-[b][color=#cb4141]Sprites[/color][/b]
-Animated Pixel Adventurer
-Free Pixelart Platformer Tileset
-Sunny Land 2D Pixel Art Pack
-Slime
-Pixel health bar asset pack
-
-[b][color=#cb4141]Fonts[/color][/b]
-pixelmix font
-Arcade Classic Font
-
-[b][color=#cb4141]Sounds and musics[/color][/b]
-The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala
-Star Commander1 music
+taellinglin(兩零林) [Musician]
+Geist [Programmer]
+Yummyglitzer [Animator]
+Ninja_cat [Artist]
 "
-text = "This demo was made by using those amazing assets (thanks to their author, that share their works like that). To use those assets, I recommend to directly download it from their official page and follow the license terms. See my github for the links.
-
-Sprites
-Animated Pixel Adventurer
-Free Pixelart Platformer Tileset
-Sunny Land 2D Pixel Art Pack
-Slime
-Pixel health bar asset pack
-
-Fonts
-pixelmix font
-Arcade Classic Font
-
-Sounds and musics
-The Essential Retro Video Game Sound Effects Collection [512 sounds] By Juhani Junkala
-Star Commander1 music
-"
-scroll_active = false
-
-[node name="Label" type="Label" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -146.512
-margin_top = -22.8521
-margin_right = 0.487671
-margin_bottom = -5.85211
-custom_fonts/font = SubResource( 1 )
-text = "A  demo  by  Levrault"
 
 [node name="Button" type="Button" parent="."]
-margin_left = 1.37894
-margin_top = 239.829
-margin_right = 118.379
-margin_bottom = 268.829
-custom_styles/hover = SubResource( 2 )
+margin_left = 64.3789
+margin_top = 112.829
+margin_right = 181.379
+margin_bottom = 141.829
+custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = ExtResource( 7 )
 custom_styles/focus = ExtResource( 8 )
 custom_styles/normal = ExtResource( 9 )
 custom_fonts/font = ExtResource( 10 )
 text = "Return"
-
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="Background"]

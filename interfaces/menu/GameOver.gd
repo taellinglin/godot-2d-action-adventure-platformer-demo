@@ -7,8 +7,8 @@ extends Control
 
 
 func _ready() -> void:
-	$HBoxContainer/Retry.connect('pressed', self, '_on_Retry')
-	$HBoxContainer/Quit.connect('pressed', self, '_on_Quit')
+	$GameOverAlert/Panel/Vertical/retry.connect('pressed', self, '_on_Retry')
+	$GameOverAlert/Panel/Vertical/quit.connect('pressed', self, '_on_Quit')
 
 
 func show() -> void:

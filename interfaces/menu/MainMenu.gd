@@ -14,6 +14,7 @@ func _on_Play_pressed() -> void:
 
 
 func _on_Credit_pressed() -> void:
+	$CenterContainer/VBoxContainer.hide();
 	get_tree().change_scene('res://interfaces/menu/Credits.tscn')
 	
 	
