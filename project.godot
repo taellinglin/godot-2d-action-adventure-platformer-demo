@@ -151,7 +151,7 @@ debug_mode=false
 [application]
 
 config/name="godot-2d-action-adventure-platformer-demo"
-run/main_scene="res://interfaces/menu/MainMenu.tscn"
+run/main_scene="res://scenes/Title.tscn"
 config/icon="res://icon.png"
 
 [autoload]
