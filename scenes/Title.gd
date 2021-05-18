@@ -13,6 +13,7 @@ func _ready():
 
 func _input(event):
 	if(event.is_action("ui_accept")):
+		get_node("AudioStreamPlayer2").play()
 		get_tree().change_scene("res://scenes/Level1.tscn");
 
 

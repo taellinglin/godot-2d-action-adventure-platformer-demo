@@ -157,6 +157,7 @@ config/icon="res://icon.png"
 [autoload]
 
 LevelManager="*res://managers/LevelManager.gd"
+Sfx="*res://sfx/sfx.gd"
 
 [debug]
 
