@@ -16,11 +16,11 @@ shader_param/scroll_speed = 0.002
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 5 )
-shader_param/scroll_speed = -0.01
+shader_param/scroll_speed = -0.025
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 5 )
-shader_param/scroll_speed = 0.025
+shader_param/scroll_speed = 0.05
 
 [sub_resource type="ShaderMaterial" id=10]
 
@@ -50,9 +50,33 @@ font_data = ExtResource( 7 )
 resource_name = "press_start"
 length = 2.0
 loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1.1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.192157 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Logo:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 0.366021, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -120 ), Vector2( 0, 0 ) ]
+}
 
 [node name="Node2D" type="Node"]
 script = ExtResource( 4 )
@@ -109,7 +133,7 @@ __meta__ = {
 
 [node name="Logo" type="Sprite" parent="."]
 material = SubResource( 10 )
-position = Vector2( 120, -66 )
+position = Vector2( 120, 70 )
 z_index = 11
 texture = SubResource( 12 )
 script = ExtResource( 6 )

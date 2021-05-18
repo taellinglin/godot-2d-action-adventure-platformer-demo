@@ -22,7 +22,7 @@ func _process(delta):
 	else:
 		c = clock;
 		if(offset_frame<offset_framecount):
-			self.translate(Vector2(0,voffset[offset_frame]));
+			translate(Vector2(0,voffset[offset_frame]));
 			offset_frame += 1;
 		else:
 			offset_frame = 0;

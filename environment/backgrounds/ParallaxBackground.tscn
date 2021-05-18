@@ -23,11 +23,11 @@ shader_param/scroll_speed = 0.002
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 2 )
-shader_param/scroll_speed = -0.01
+shader_param/scroll_speed = -0.025
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 2 )
-shader_param/scroll_speed = 0.025
+shader_param/scroll_speed = 0.05
 
 [node name="Background" type="ParallaxBackground"]
 
