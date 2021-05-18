@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://interfaces/menu/Credits.gd" type="Script" id=1]
 [ext_resource path="res://environment/backgrounds/ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sound/music/Title Screen.ogg" type="AudioStream" id=3]
 [ext_resource path="res://font/Daemon Full Working (1).ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://interfaces/theme/button/pressed.stylebox.tres" type="StyleBox" id=7]
 [ext_resource path="res://interfaces/theme/button/focus.stylebox.tres" type="StyleBox" id=8]
@@ -45,21 +46,12 @@ __meta__ = {
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
 
-[node name="Sprite" parent="Background/CloudsBack" index="0"]
-position = Vector2( -35, -31 )
-
 [node name="CloudFront" parent="Background" index="1"]
 visible = false
 position = Vector2( 820, 203 )
 
 [node name="BGBack" parent="Background" index="2"]
 position = Vector2( 769.796, 150 )
-
-[node name="Sprite" parent="Background/BGBack" index="0"]
-position = Vector2( 5.62885, -166.882 )
-
-[node name="Sprite" parent="Background/BGFront" index="0"]
-position = Vector2( 0.68317, -111.683 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchor_left = 0.5
@@ -110,5 +102,9 @@ text = "Return"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 
 [editable path="Background"]
