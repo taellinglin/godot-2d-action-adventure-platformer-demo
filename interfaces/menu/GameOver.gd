@@ -20,4 +20,4 @@ func _on_Retry() -> void:
 
 
 func _on_Quit() -> void:
-	get_tree().quit()
+	LevelManager.goto_scene("res://interfaces/menu/MainMenu.tscn")

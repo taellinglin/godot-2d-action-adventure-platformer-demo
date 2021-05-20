@@ -20,4 +20,6 @@ func _on_Resume_pressed() -> void:
 
 
 func _on_Quit_pressed() -> void:
-	get_tree().quit()
+	LevelManager.goto_scene("res://interfaces/menu/MainMenu.tscn")
+	get_tree().paused = false
+	visible = false
