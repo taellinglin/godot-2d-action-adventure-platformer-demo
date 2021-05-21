@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://interfaces/menu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://scroll.shader" type="Shader" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Backdrop/trees2.png" type="Texture" id=5]
 [ext_resource path="res://Backdrop/trees.png" type="Texture" id=6]
 [ext_resource path="res://sound/music/Title Screen 2.ogg" type="AudioStream" id=7]
+[ext_resource path="res://menus/sprites/file_select_cursor.png" type="Texture" id=8]
+[ext_resource path="res://interfaces/dialogue/MainMenu.gd" type="Script" id=9]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
@@ -169,3 +171,8 @@ margin_bottom = -1.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
+
+[node name="CursorIcon" type="Sprite" parent="."]
+position = Vector2( 72, 49 )
+texture = ExtResource( 8 )
+script = ExtResource( 9 )

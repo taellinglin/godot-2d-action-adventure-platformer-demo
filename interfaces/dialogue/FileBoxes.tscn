@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://font/Daemon.tres" type="DynamicFont" id=1]
 [ext_resource path="res://sfx/cancel.wav" type="AudioStream" id=2]
@@ -8,8 +8,7 @@
 [ext_resource path="res://interfaces/theme/Theme.tres" type="Theme" id=6]
 [ext_resource path="res://interfaces/theme/panel/alertbox.styleboxflat.tres" type="StyleBox" id=7]
 [ext_resource path="res://interfaces/dialogue/Files.gd" type="Script" id=8]
-[ext_resource path="res://interfaces/dialogue/CursorIcon.gd" type="Script" id=9]
-[ext_resource path="res://menus/sprites/file_select_cursor.png" type="Texture" id=10]
+[ext_resource path="res://CursorIcon.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
@@ -115,11 +114,7 @@ text = "3. [New Game] - Starting Area
 [Character 2] Level 1 [???/???XP]"
 scroll_active = false
 
-[node name="CursorIcon" type="Sprite" parent="."]
-position = Vector2( 223, 17 )
-texture = ExtResource( 10 )
-offset = Vector2( 0, 48 )
-script = ExtResource( 9 )
+[node name="CursorIcon" parent="." instance=ExtResource( 9 )]
 
 [node name="selectsfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
