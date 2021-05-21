@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://managers/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://interfaces/menu/GameOver.tscn" type="PackedScene" id=2]
@@ -17,6 +17,172 @@
 [ext_resource path="res://characters/enemies/eagle/Eagle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=16]
 [ext_resource path="res://characters/player/gui/PlayerLifeBar.tscn" type="PackedScene" id=17]
+[ext_resource path="res://characters/commons/Health.gd" type="Script" id=18]
+[ext_resource path="res://engine/Momentum.gd" type="Script" id=19]
+[ext_resource path="res://characters/commons/states/motion/combat/getting-hit.gd" type="Script" id=20]
+[ext_resource path="res://effects/Explosion.tscn" type="PackedScene" id=21]
+[ext_resource path="res://characters/enemies/gui/SimpleLifebar.tscn" type="PackedScene" id=22]
+[ext_resource path="res://characters/enemies/bat/Bat.tscn" type="PackedScene" id=23]
+[ext_resource path="res://engine/Physics2D.gd" type="Script" id=24]
+[ext_resource path="res://characters/enemies/monster/Monster.tscn" type="PackedScene" id=25]
+[ext_resource path="res://characters/commons/DamageZone.gd" type="Script" id=26]
+[ext_resource path="res://characters/enemies/slime/states/combat/attack.gd" type="Script" id=27]
+[ext_resource path="res://environment/props/NPC.gd" type="Script" id=28]
+[ext_resource path="res://characters/enemies/slime/states/combat/death.gd" type="Script" id=29]
+[ext_resource path="res://tools/draw-circle.gd" type="Script" id=30]
+[ext_resource path="res://characters/enemies/slime/states/on-ground/idle.gd" type="Script" id=31]
+[ext_resource path="res://characters/enemies/slime/states/on-ground/follow.gd" type="Script" id=32]
+[ext_resource path="res://environment/props/House.gd" type="Script" id=33]
+[ext_resource path="res://characters/enemies/slime/ Slime.gd" type="Script" id=34]
+[ext_resource path="res://characters/enemies/slime/irishdress.png" type="Texture" id=35]
+[ext_resource path="res://characters/enemies/slime/slime-Sheet.png" type="Texture" id=37]
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 14.3725, 24.0376 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "Attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11, 12 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("States/Attack/DamageZone:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Death"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19, 20 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 100, 100, 100, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "GettingHit"
+length = 0.6
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 16 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 100, 100, 100, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Move"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 10.8194, 6.66371 )
+
+[sub_resource type="CanvasItemMaterial" id=7]
+blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 14.2761, 12 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "Idle"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("World/Props/NPC:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 16, 17, 18, 19 ]
+}
 
 [node name="Game" type="Node2D"]
 position = Vector2( 930.242, 636.341 )
@@ -72,10 +238,29 @@ tile_data = PoolIntArray( -2293748, 6, 0, -2293747, 4, 0, -2293746, 4, 0, -22937
 
 [node name="Props" type="Node2D" parent="World"]
 
+[node name="NPC" type="Sprite" parent="World/Props"]
+position = Vector2( -353.509, -431.817 )
+z_index = -1
+texture = ExtResource( 35 )
+vframes = 22
+hframes = 13
+frame = 13
+region_rect = Rect2( 20, 10, 30, 50 )
+script = ExtResource( 28 )
+
+[node name="AlertTrigger" type="Area2D" parent="World/Props/NPC"]
+position = Vector2( -9.48832, 53.5473 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Props/NPC/AlertTrigger"]
+position = Vector2( 8.13177, -44.5477 )
+shape = SubResource( 11 )
+
+[node name="AlertBoxPosition" type="Position2D" parent="World/Props/NPC"]
+position = Vector2( -99.6485, -41.0888 )
+
 [node name="House" parent="World/Props" instance=ExtResource( 12 )]
 position = Vector2( 344.758, -598.341 )
-scene_path = "interfaces/menu/MainMenu"
-is_last_level = true
+script = ExtResource( 33 )
 
 [node name="Enemies" type="Node2D" parent="World"]
 
@@ -84,8 +269,102 @@ visible = false
 position = Vector2( -481.242, -440.341 )
 z_index = 0
 
-[node name="Slime" parent="World/Enemies" instance=ExtResource( 14 )]
+[node name="Slime" type="KinematicBody2D" parent="World/Enemies"]
 position = Vector2( -543.242, -412.341 )
+collision_layer = 4
+collision_mask = 5
+script = ExtResource( 34 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Enemies/Slime"]
+anims/Attack = SubResource( 1 )
+anims/Death = SubResource( 2 )
+anims/GettingHit = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/Move = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="World/Enemies/Slime"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Enemies/Slime"]
+position = Vector2( 1, 4.28281 )
+shape = SubResource( 6 )
+
+[node name="Physics2D" type="Node2D" parent="World/Enemies/Slime"]
+script = ExtResource( 24 )
+
+[node name="Health" type="Node2D" parent="World/Enemies/Slime"]
+script = ExtResource( 18 )
+
+[node name="Momentum" type="Node2D" parent="World/Enemies/Slime"]
+script = ExtResource( 19 )
+
+[node name="CooldownTimer" type="Timer" parent="World/Enemies/Slime"]
+wait_time = 1.5
+
+[node name="Sprite" type="Sprite" parent="World/Enemies/Slime"]
+material = SubResource( 7 )
+texture = ExtResource( 37 )
+vframes = 3
+hframes = 8
+frame = 18
+
+[node name="States" type="Node2D" parent="World/Enemies/Slime"]
+
+[node name="Idle" type="Node2D" parent="World/Enemies/Slime/States"]
+script = ExtResource( 31 )
+
+[node name="Follow" type="Node2D" parent="World/Enemies/Slime/States"]
+script = ExtResource( 32 )
+
+[node name="Attack" type="Node2D" parent="World/Enemies/Slime/States"]
+script = ExtResource( 27 )
+
+[node name="DamageZone" type="Area2D" parent="World/Enemies/Slime/States/Attack"]
+visible = false
+monitoring = false
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 26 )
+MASK = 1
+KNOCKBACK_FORCE = Vector2( 10, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Enemies/Slime/States/Attack/DamageZone"]
+position = Vector2( -10.2136, -0.961952 )
+shape = SubResource( 8 )
+
+[node name="GettingHit" type="Node2D" parent="World/Enemies/Slime/States"]
+script = ExtResource( 20 )
+
+[node name="Death" type="Node2D" parent="World/Enemies/Slime/States"]
+script = ExtResource( 29 )
+
+[node name="Explosion" parent="World/Enemies/Slime/States/Death" instance=ExtResource( 21 )]
+visible = false
+position = Vector2( -2.31964, -6.49501 )
+
+[node name="GUI" type="Node2D" parent="World/Enemies/Slime"]
+
+[node name="SimpleLifebar" parent="World/Enemies/Slime/GUI" instance=ExtResource( 22 )]
+margin_left = -15.0
+margin_top = -22.0
+margin_right = 64.0
+margin_bottom = -14.0
+
+[node name="Debug" type="Node2D" parent="World/Enemies/Slime"]
+
+[node name="Follow" type="Node2D" parent="World/Enemies/Slime/Debug"]
+script = ExtResource( 30 )
+color = Color( 0.882353, 0.92549, 0.105882, 1 )
+value = "FOLLOW_RANGE"
+
+[node name="Attack" type="Node2D" parent="World/Enemies/Slime/Debug"]
+script = ExtResource( 30 )
+color = Color( 0.941176, 0.156863, 0.156863, 1 )
+value = "ATTACK_RANGE"
+
+[node name="Stop" type="Node2D" parent="World/Enemies/Slime/Debug"]
+script = ExtResource( 30 )
+color = Color( 255, 255, 255, 255 )
+value = "TARGET_MIN_DISTANCE"
 
 [node name="Slime2" parent="World/Enemies" instance=ExtResource( 14 )]
 position = Vector2( -429.242, -411.341 )
@@ -96,9 +375,20 @@ position = Vector2( -225.242, -412.341 )
 [node name="Slime4" parent="World/Enemies" instance=ExtResource( 14 )]
 position = Vector2( -6.242, -507.341 )
 
+[node name="Monster" parent="World/Enemies" instance=ExtResource( 25 )]
+position = Vector2( 287.914, -563.556 )
+
+[node name="Monster2" parent="World/Enemies" instance=ExtResource( 25 )]
+position = Vector2( -702.389, -437.338 )
+
 [node name="Eagle" parent="World/Enemies" instance=ExtResource( 15 )]
 position = Vector2( -236.242, -515.341 )
 patrol_distance = 100.0
+
+[node name="Bat" parent="World/Enemies" instance=ExtResource( 23 )]
+
+[node name="Bat2" parent="World/Enemies" instance=ExtResource( 23 )]
+position = Vector2( -138.308, -496.25 )
 
 [node name="Player" parent="World" instance=ExtResource( 16 )]
 position = Vector2( -872.203, -417.025 )
@@ -114,3 +404,7 @@ limit_bottom = 270
 [node name="HUD" type="CanvasLayer" parent="World/Player"]
 
 [node name="PlayerLifeBar" parent="World/Player/HUD" instance=ExtResource( 17 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Idle = SubResource( 10 )

@@ -39,6 +39,36 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://characters/commons/states/motion/combat/death.gd"
 }, {
+"base": "Node",
+"class": "Dialogic",
+"language": "GDScript",
+"path": "res://addons/dialogic/addons/dialogic/Other/DialogicClass.gd"
+}, {
+"base": "Control",
+"class": "DialogicBackgroundMusic",
+"language": "GDScript",
+"path": "res://addons/dialogic/addons/dialogic/Nodes/BackgroundMusic.gd"
+}, {
+"base": "Node",
+"class": "DialogicDefinitionsUtil",
+"language": "GDScript",
+"path": "res://addons/dialogic/addons/dialogic/Other/DialogicDefinitionsUtil.gd"
+}, {
+"base": "Reference",
+"class": "DialogicResources",
+"language": "GDScript",
+"path": "res://addons/dialogic/addons/dialogic/Other/DialogicResources.gd"
+}, {
+"base": "Reference",
+"class": "DialogicUtil",
+"language": "GDScript",
+"path": "res://addons/dialogic/addons/dialogic/Other/DialogicUtil.gd"
+}, {
+"base": "NinePatchRect",
+"class": "DialogueBox",
+"language": "GDScript",
+"path": "res://addons/adbox/DialogueBox.gd"
+}, {
 "base": "Node2D",
 "class": "Draw",
 "language": "GDScript",
@@ -58,6 +88,76 @@ _global_script_classes=[ {
 "class": "FileBoxes",
 "language": "GDScript",
 "path": "res://interfaces/dialogue/Files.gd"
+}, {
+"base": "GDDlg_AttributeBase",
+"class": "GDDlg_AttributeArray",
+"language": "GDScript",
+"path": "res://attributes/basic_types/GDDlg_AttributeArray.gd"
+}, {
+"base": "Object",
+"class": "GDDlg_AttributeBase",
+"language": "GDScript",
+"path": "res://attributes/GDDlg_AttributeBase.gd"
+}, {
+"base": "GDDlg_AttributeBase",
+"class": "GDDlg_AttributeBool",
+"language": "GDScript",
+"path": "res://attributes/basic_types/GDDlg_AttributeBool.gd"
+}, {
+"base": "GDDlg_AttributeBase",
+"class": "GDDlg_AttributeInteger",
+"language": "GDScript",
+"path": "res://attributes/basic_types/GDDlg_AttributeInteger.gd"
+}, {
+"base": "GDDlg_AttributeBase",
+"class": "GDDlg_AttributeMap",
+"language": "GDScript",
+"path": "res://attributes/basic_types/GDDlg_AttributeMap.gd"
+}, {
+"base": "GDDlg_AttributeBase",
+"class": "GDDlg_AttributeString",
+"language": "GDScript",
+"path": "res://attributes/basic_types/GDDlg_AttributeString.gd"
+}, {
+"base": "GDDlg_ConditionOr",
+"class": "GDDlg_ConditionAnd",
+"language": "GDScript",
+"path": "res://conditions/basic_logic/GDDlg_ConditionAnd.gd"
+}, {
+"base": "Object",
+"class": "GDDlg_ConditionBase",
+"language": "GDScript",
+"path": "res://conditions/GDDlg_ConditionBase.gd"
+}, {
+"base": "GDDlg_ConditionBase",
+"class": "GDDlg_ConditionFalse",
+"language": "GDScript",
+"path": "res://conditions/basic_logic/GDDlg_ConditionFalse.gd"
+}, {
+"base": "GDDlg_ConditionOr",
+"class": "GDDlg_ConditionNor",
+"language": "GDScript",
+"path": "res://conditions/basic_logic/GDDlg_ConditionNor.gd"
+}, {
+"base": "GDDlg_ConditionBase",
+"class": "GDDlg_ConditionNot",
+"language": "GDScript",
+"path": "res://conditions/basic_logic/GDDlg_ConditionNot.gd"
+}, {
+"base": "GDDlg_ConditionBase",
+"class": "GDDlg_ConditionOr",
+"language": "GDScript",
+"path": "res://conditions/basic_logic/GDDlg_ConditionOr.gd"
+}, {
+"base": "Object",
+"class": "GDDlg_DialogDefinition",
+"language": "GDScript",
+"path": "res://GDDlg_DialogDefinition.gd"
+}, {
+"base": "Node",
+"class": "GDDlg_DialogPlayer",
+"language": "GDScript",
+"path": "res://GDDlg_DialogPlayer.gd"
 }, {
 "base": "Node2D",
 "class": "GameOverDialog",
@@ -88,6 +188,11 @@ _global_script_classes=[ {
 "class": "Interaction2",
 "language": "GDScript",
 "path": "res://environment/props/House0.gd"
+}, {
+"base": "Sprite",
+"class": "Interaction3",
+"language": "GDScript",
+"path": "res://environment/props/NPC.gd"
 }, {
 "base": "Node2D",
 "class": "Momentum",
@@ -136,16 +241,37 @@ _global_script_class_icons={
 "Character": "",
 "DamageZone": "",
 "Death": "",
+"Dialogic": "",
+"DialogicBackgroundMusic": "",
+"DialogicDefinitionsUtil": "",
+"DialogicResources": "",
+"DialogicUtil": "",
+"DialogueBox": "res://addons/adbox/icon.png",
 "Draw": "",
 "Dummy": "",
 "Eagle": "",
 "FileBoxes": "",
+"GDDlg_AttributeArray": "",
+"GDDlg_AttributeBase": "",
+"GDDlg_AttributeBool": "",
+"GDDlg_AttributeInteger": "",
+"GDDlg_AttributeMap": "",
+"GDDlg_AttributeString": "",
+"GDDlg_ConditionAnd": "",
+"GDDlg_ConditionBase": "",
+"GDDlg_ConditionFalse": "",
+"GDDlg_ConditionNor": "",
+"GDDlg_ConditionNot": "",
+"GDDlg_ConditionOr": "",
+"GDDlg_DialogDefinition": "",
+"GDDlg_DialogPlayer": "",
 "GameOverDialog": "",
 "GettingHit": "",
 "Health": "",
 "InAir": "",
 "Interaction": "",
 "Interaction2": "",
+"Interaction3": "",
 "Momentum": "",
 "Motion": "",
 "OnGround": "",
@@ -159,6 +285,15 @@ _global_script_class_icons={
 [Debug]
 
 debug_mode=false
+
+[PluginSettings]
+
+gddlg/DialogJsonPaths={
+
+}
+gddlg/LoadOnReady=true
+gddlg/StrictDialogAttributes=false
+gddlg/StrictOptionAttributes=false
 
 [application]
 
@@ -184,6 +319,10 @@ window/size/test_height=140
 window/vsync/vsync_via_compositor=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "SMRT" )
 
 [input]
 
