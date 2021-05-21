@@ -10,7 +10,6 @@ func _ready():
 	LevelManager.set_scene_path(scene_path)
 	min_limit = $Bounds/Min.position
 	max_limit = $Bounds/Max.position
-
 	# camera limits are based on global pixels, so we'll get the absolute position of our bounds to set the limits, 
 	# and use relative to compare to the player's relative position
 	# Thanks to Razoric for this solution !
@@ -20,6 +19,7 @@ func _ready():
 	$World/Player/Camera.limit_right = global_max.x
 	$World/Player/Camera.limit_top = global_max.y
 	$World/Player/Camera.limit_bottom = global_min.y
+	Sfx.menumode = false;
 
 
 func _on_Player_position_changed(new_position: Vector2) -> void:

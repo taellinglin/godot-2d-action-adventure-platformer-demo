@@ -7,7 +7,8 @@ var load_completed: bool = false
 func _ready() -> void:
 	$Tween.connect('tween_completed', self, '_on_tween_completed')
 	load_completed = false
-
+	Sfx.menumode = false;
+	
 
 func set_progress(progress: float) -> void:
 	var progress_bar := find_node('ProgressBar')

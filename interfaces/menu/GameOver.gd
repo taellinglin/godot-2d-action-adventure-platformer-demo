@@ -9,10 +9,13 @@ extends Control
 func _ready() -> void:
 	$GameOverAlert/Panel/Vertical/retry.connect('pressed', self, '_on_Retry')
 	$GameOverAlert/Panel/Vertical/quit.connect('pressed', self, '_on_Quit')
+	
 
 
 func show() -> void:
 	$AnimationPlayer.play('Show')
+	Sfx.menumode = true;
+	Sfx.maxitems = 1;
 
 
 func _on_Retry() -> void:

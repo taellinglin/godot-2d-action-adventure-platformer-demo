@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 
 func _on_Play_pressed() -> void:
-	LevelManager.goto_scene('res://scenes/%s.tscn' % [scene_path])
+	LevelManager.goto_scene("res://interfaces/dialogue/FileBoxes.tscn")
 
 
 func _on_Credit_pressed() -> void:

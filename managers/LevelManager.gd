@@ -8,11 +8,10 @@ var loading_screen: Node
 var root: Node
 var current_resource
 var scene_path = '' setget set_scene_path, get_scene_path
-
+var file = 0;
 
 func _ready() -> void:
 	root = get_tree().get_root()
-
 
 func show_error() -> void:
 	print('Scene was not loaded')

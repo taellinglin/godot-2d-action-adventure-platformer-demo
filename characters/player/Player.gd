@@ -20,6 +20,7 @@ func _ready() -> void:
 	$CooldownTimer.connect('timeout', self, '_on_Cooldown_timeout')
 	$CooldownBar.set_duration($CooldownTimer.wait_time)
 	
+	
 	._initialize_state()
 	_initialize_interaction()
 
