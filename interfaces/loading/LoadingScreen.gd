@@ -17,7 +17,7 @@ func set_progress(progress: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed('enter') and load_completed:
+	if(event.is_action_pressed("enter")||event.is_action_pressed("ui_accept")):
 		LevelManager.set_new_scene(resource)
 		queue_free()
 
@@ -25,7 +25,7 @@ func _input(event: InputEvent) -> void:
 func set_resource(loaded_resource: Resource) -> void:
 	resource = loaded_resource
 	load_completed = true
-
+	
 
 #warning-ignore:unused_argument
 func _on_tween_completed(object: Object, key: NodePath) -> void:

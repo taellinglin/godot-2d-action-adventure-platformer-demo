@@ -471,9 +471,9 @@ script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 5 )
-vframes = 16
 hframes = 7
-frame = 103
+vframes = 16
+frame = 73
 
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -483,7 +483,6 @@ margin_left = -15.6545
 margin_top = -18.5
 margin_right = 63.3455
 margin_bottom = -10.5
-duration = 0.5
 
 [node name="States" type="Node2D" parent="."]
 
@@ -580,7 +579,6 @@ script = ExtResource( 18 )
 
 [node name="DamageZone" type="Area2D" parent="States/AttackAirMedium"]
 visible = false
-monitoring = false
 collision_layer = 0
 collision_mask = 4
 script = ExtResource( 13 )
@@ -643,4 +641,5 @@ visible = false
 
 [node name="WaitForAlertBox" type="Node2D" parent="States"]
 script = ExtResource( 27 )
+
 [connection signal="timeout" from="States/CombatIdle/CombatIdleTimer" to="States/CombatIdle" method="_on_CombatIdleTimer_timeout"]
